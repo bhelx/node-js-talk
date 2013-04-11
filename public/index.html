@@ -47,15 +47,14 @@
   <h2>What I plan to cover</h2>
   <ul>
     <li><p>What is node.js?</p></li>
-    <li><p>Internals (how it works)</p></li>
-    <li><p>Use Cases</p></li>
+    <li><p>Event Loop and Async I/O (how and why it works)</p></li>
     <li><p>Pitfalls and Best Practices</p></li>
   </ul>
 </section>
 
 <section class="slide" id="definition">
   <h2>What is node.js</h2>
-  <p>Node.js is a platform built on <u>Chrome's JavaScript runtime</u> for easily building fast, <u>scalable</u> <u>network applications</u>. Node.js uses an <u>event-driven</u>, <u>non-blocking I/O model</u> that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
+  <p>Node.js is a platform built on <u>Chrome's JavaScript runtime</u> for <u>easily</u> building fast, <u>scalable</u> <u>network applications</u>. Node.js uses an <u>event-driven</u>, <u>non-blocking I/O model</u> that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
 </section>
 
 <section class="slide" id="v8">
@@ -102,12 +101,12 @@
 </section>
 
 <section class="slide" id="scalable">
-  <h2>Scalable</h2>
+  <h2>Easily Scalable</h2>
   <h1>?</h1>
 </section>
 
 <section class="slide" id="scalable-troll">
-  <h2>Scalable</h2>
+  <h2>Easily Scalable</h2>
   <img src="images/scalable.jpg" />
 </section>
 
@@ -422,6 +421,26 @@ server.listen(8000);
 console.log("Server running at http://127.0.0.1:8000/");</textarea>
 </section>
 
+<section class="slide" id="takeaways">
+<h2>Takeaways</h2>
+<p>Everything runs in parallel, except your code</p>
+<ul>
+  <li><p>Node is meant to solve I/O bound problems</p></li>
+  <li><p>Never let your code run for too much time (< 50ms) is maybe a good cutoff</p></li>
+  <li><p>Node is an assembly required framework, it doesn't do anything. If you want to rebuild some Rails application be prepared for lots of extra work.</p></li>
+<ul>
+</section>
+
+<section class="slide" id="takeaways-2">
+<h2>Some Useful Libraries</h2>
+<ul>
+  <li><p>Connect/Express</p></li>
+  <li><p>Socket.io</p></li>
+  <li><p>async</p></li>
+  <li><p>request</p></li>
+  <li><p>Sails.js</p></li>
+<ul>
+</section>
 
 <!-- deck.navigation snippet -->
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
