@@ -318,7 +318,7 @@ if __name__ == "__main__":
   tornado.ioloop.IOLoop.instance().start()</textarea>
 </section>
 
-<section class="slide" id="networking-tornado-3">
+<section class="slide" id="networking-tornado-4">
   <h2>Tornado + Blocking I/O</h2>
   <p>Awesome project but people used it incorrectly</p>
   <p>The problem, most python libraries are still blocking and written to be called synchronously</p>
@@ -394,7 +394,7 @@ server.listen(8000);
 console.log("Server running at http://127.0.0.1:8000/");</textarea>
 </section>
 
-<section class="slide" id="networking-server-io-">
+<section class="slide" id="networking-server-io-accident">
   <h2>Let's break it on accident</h2>
 
   <textarea id="code" name="code" class="code" mode="javascript" style="display: none;">
@@ -421,6 +421,41 @@ server.listen(8000);
 console.log("Server running at http://127.0.0.1:8000/");</textarea>
 </section>
 
+<section class="slide" id="networking-server-io-fix">
+  <h2>Cluster</h2>
+
+  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;">
+var http    = require('http')
+  , url     = require('url')
+  , cluster = require('cluster')
+  , os      = require('os')
+  ;
+
+function fib (n) {
+  return n < 2 ? 1 : fib(n-2) + fib(n-1);
+}
+
+if (cluser.isMaster) {
+  os.cpus().forEach(function () {
+    cluster.fork();
+  });
+} else {
+  var server = http.createServer(function (request, response) {
+    response.writeHead(200, {"Content-Type": "text/plain"});
+
+    var query = url.parse(request.url, true).query;
+
+    var result = fib(parseInt(query['n'], 10));
+
+    response.end(result.toString());
+  });
+
+  server.listen(8000);
+
+  console.log("Server running at http://127.0.0.1:8000/");
+
+}</textarea>
+</section>
 <section class="slide" id="takeaways">
 <h2>Takeaways</h2>
 <p>Everything runs in parallel, except your code</p>
