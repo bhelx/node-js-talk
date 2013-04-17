@@ -8,5 +8,5 @@ Not going to discuss javascript, futures vs. callbacks, flow control, webworkers
 
 ## Running
 
-To run slides simply open slides/introduction/index.html in your browser
+To run slides simply open public/index.html in your browser
 
