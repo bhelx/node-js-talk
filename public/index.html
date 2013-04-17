@@ -111,7 +111,7 @@
 </section>
 
 <section class="slide" id="network-application">
-  <h2>Network Application? Wtf is that?</h2>
+  <h2>Network Application?</h2>
   <h3>NODE IS NOT A WEB APPLICATION FRAMEWORK</h3>
   <p>Node is nothing like the following:</p>
   <ul>
@@ -123,7 +123,7 @@
 </section>
 
 <section class="slide" id="network-application-cont">
-  <h2>Network Application? Wtf is that?</h2>
+  <h2>Network Application?</h2>
   <p>Node provides you with some high level objects to manipulate different sockets using buffers and streams:</p>
   <ul>
     <li><p>HTTP/S</p></li>
@@ -169,7 +169,7 @@ console.log("Done");</textarea>
   <h2>Event Driven</h2>
   <ul>
     <li><p>Node is a single process and a single thread (cringe)</p></li>
-    <li><p>There is no such thing as concurrent execution of code, but there is a high degree of parallelism of tasks (more on this later)</p></li>
+    <li><p>There is no such thing as parallel execution of code, but there is a high degree of concurrency of tasks (more on this later)</p></li>
     <li><p>Everything in node is driven by an event loop in that main thread</p></li>
   </ul>
 <textarea id="code" name="code" class="code" mode="javascript" style="display: none;">
@@ -281,7 +281,7 @@ console.log('Interval set for 1 second');</textarea>
 
 <section class="slide" id="networking-rails-cons2">
   <h2>Rails + Apache + Passenger</h2>
-  <p>Most networking applications do little computation but Passenger tries to solve the problem of parallelism using computational concurrency</p>
+  <p>Most networking applications do little computation but Passenger tries to solve the problem of concurrency using parallel computing</p>
   <p>It's also important to note that I/O takes magnitudes longer than computation</p>
   <img src="images/costs.png" />
 </section>
